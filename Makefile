@@ -1,4 +1,5 @@
 ## Specific tools used in this Makefile.
+DEBUILD         ?= /usr/bin/debuild
 MKDIR           ?= /bin/mkdir
 PYTHON          ?= /usr/bin/python
 RPMBUILD        ?= /usr/bin/rpmbuild
@@ -26,6 +27,10 @@ sdist:
 PHONY += rpm
 rpm: $(RPM_SOURCES)
 	$(RPMBUILD) -ba --define "%_topdir $(RPM_BUILD_DIR)" $(RPM_SPEC_FILE)
+
+PHONY += deb
+deb:
+	$(DEBUILD) -i -us -uc -b
 
 PHONY += clean
 clean:

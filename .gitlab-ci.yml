@@ -23,3 +23,15 @@ centos8-build:
       - _build/SRPMS/python-linuxfd-*.src.rpm
       - _build/RPMS/*/python*-linuxfd-*.rpm
 
+debian10-build:
+  image: ${CI_REGISTRY}/dockers/ci/debian-build:10
+  stage: build
+  script:
+    - make deb
+  after_script:
+    - mkdir --parents packages/
+    - mv ../*.deb packages/
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - packages/

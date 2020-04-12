@@ -1,0 +1,11 @@
+python3-linuxfd (1.5-1) unstable; urgency=low
+
+  * Packaging for upstream version 1.5
+
+ -- Romain Bezut <morian@xdec.net>  Sat, 12 Dec 2020 00:40:00 +0100
+
+python3-linuxfd (1.4.4-1) unstable; urgency=low
+
+  * Initial packaging for version 1.4.4.
+
+ -- Romain Bezut <morian@xdec.net>  Sun, 12 Apr 2020 17:20:00 +0100
