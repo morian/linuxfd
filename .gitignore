@@ -1,3 +1,6 @@
+# ignore rpm build directory
+_build/
+
 # ignore distutils working directories
 build/
 #dist/

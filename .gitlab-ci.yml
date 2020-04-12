@@ -1,0 +1,25 @@
+stages:
+  - build
+
+centos7-build:
+  image: ${CI_REGISTRY}/dockers/ci/centos-build:7
+  stage: build
+  script:
+    - make rpm
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - _build/SRPMS/python-linuxfd-*.src.rpm
+      - _build/RPMS/*/python*-linuxfd-*.rpm
+
+centos8-build:
+  image: ${CI_REGISTRY}/dockers/ci/centos-build:8
+  stage: build
+  script:
+    - make rpm
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - _build/SRPMS/python-linuxfd-*.src.rpm
+      - _build/RPMS/*/python*-linuxfd-*.rpm
+
